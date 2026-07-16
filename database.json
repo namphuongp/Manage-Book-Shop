@@ -1,0 +1,398 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@fahasa.com",
+      "password": "admin",
+      "role": "admin",
+      "fullName": "Quản Trị Viên",
+      "phone": "0999999999",
+      "address": "Hà Nội, Việt Nam"
+    },
+    {
+      "email": "abc123@example.com",
+      "password": "abc123",
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "",
+      "role": "customer",
+      "id": "yUGmB9aEeNw"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Văn học - Tiểu thuyết"
+    },
+    {
+      "id": "2",
+      "name": "Tâm lý - Kỹ năng sống"
+    },
+    {
+      "id": "3",
+      "name": "Kinh tế - Tài chính"
+    },
+    {
+      "id": "4",
+      "name": "Sách Thiếu nhi"
+    },
+    {
+      "id": "5",
+      "name": "Công nghệ thông tin"
+    },
+    {
+      "id": "6",
+      "name": "Giáo dục học đường"
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "title": "Nhà Giả Kim",
+      "author": "Paulo Coelho",
+      "categoryId": "1",
+      "price": 79000,
+      "stock": 150,
+      "rating": 4.8,
+      "soldCount": 300,
+      "image": "/images/nha-gia-kim.webp",
+      "description": "Câu chuyện giàu tính triết lý về hành trình đi tìm ước mơ, niềm tin và ý nghĩa cuộc sống của cậu bé chăn cừu Santiago.",
+      "publisher": "NXB Văn Học",
+      "year": 2020,
+      "pages": 227
+    },
+    {
+      "id": "2",
+      "title": "Khi Hơi Thở Hóa Thinh Không",
+      "author": "Paul Kalanithi",
+      "categoryId": "1",
+      "price": 109000,
+      "stock": 85,
+      "rating": 4.9,
+      "soldCount": 450,
+      "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp",
+      "description": "Tự truyện đầy cảm động của một bác sĩ phẫu thuật thần kinh khi anh phải đối mặt với căn bệnh ung thư phổi giai đoạn cuối.",
+      "publisher": "NXB Lao Động",
+      "year": 2017,
+      "pages": 240
+    },
+    {
+      "id": "3",
+      "title": "Cảm Ơn Người Lớn",
+      "author": "Nguyễn Nhật Ánh",
+      "categoryId": "1",
+      "price": 110000,
+      "stock": 60,
+      "rating": 4.7,
+      "soldCount": 250,
+      "image": "/images/cam-on-nguoi-lon.webp",
+      "description": "Tác phẩm đưa độc giả trở lại với những nhân vật quen thuộc trong Cho Tôi Xin Một Vé Đi Tuổi Thơ, với những suy ngẫm sâu sắc hơn.",
+      "publisher": "NXB Trẻ",
+      "year": 2018,
+      "pages": 268
+    },
+    {
+      "id": "4",
+      "title": "Mật Mã Da Vinci",
+      "author": "Dan Brown",
+      "categoryId": "1",
+      "price": 145000,
+      "stock": 45,
+      "rating": 4.6,
+      "soldCount": 180,
+      "image": "/images/mat-ma-da-vinci.webp",
+      "description": "Cuốn tiểu thuyết trinh thám gay cấn, giải mã những bí ẩn lịch sử và tôn giáo ẩn giấu trong các tác phẩm của Leonardo da Vinci.",
+      "publisher": "NXB Văn Học",
+      "year": 2021,
+      "pages": 550
+    },
+    {
+      "id": "5",
+      "title": "Đắc Nhân Tâm (Tái bản)",
+      "author": "Dale Carnegie",
+      "categoryId": "2",
+      "price": 86000,
+      "stock": 200,
+      "rating": 4.9,
+      "soldCount": 500,
+      "image": "/images/dac-nhan-tam.jpg",
+      "description": "Cuốn sách kinh điển mọi thời đại về nghệ thuật giao tiếp và thu phục lòng người.",
+      "publisher": "NXB Tổng hợp TP.HCM",
+      "year": 2022,
+      "pages": 320
+    },
+    {
+      "id": "6",
+      "title": "Hiểu Về Trái Tim",
+      "author": "Minh Niệm",
+      "categoryId": "2",
+      "price": 158000,
+      "stock": 110,
+      "rating": 4.8,
+      "soldCount": 200,
+      "image": "/images/hieu-ve-trai-tim.webp",
+      "description": "Hành trình khám phá nội tâm và chữa lành những tổn thương thông qua góc nhìn thiền tập, giúp tìm lại bình yên.",
+      "publisher": "NXB Tổng hợp TP.HCM",
+      "year": 2023,
+      "pages": 480
+    },
+    {
+      "id": "7",
+      "title": "Muôn Kiếp Nhân Sinh",
+      "author": "Nguyên Phong",
+      "categoryId": "2",
+      "price": 168000,
+      "stock": 90,
+      "rating": 4.7,
+      "soldCount": 150,
+      "image": "/images/muon-kiep-nhan-sinh.webp",
+      "description": "Bức tranh kỳ vĩ về luật luân hồi, nhân quả trải dài qua nhiều kiếp sống của một doanh nhân tại Mỹ.",
+      "publisher": "NXB Tổng hợp TP.HCM",
+      "year": 2020,
+      "pages": 408
+    },
+    {
+      "id": "8",
+      "title": "Không Diệt Không Sinh Đừng Sợ Hãi",
+      "author": "Thích Nhất Hạnh",
+      "categoryId": "2",
+      "price": 110000,
+      "stock": 130,
+      "rating": 5,
+      "soldCount": 400,
+      "image": "/images/khong-diet-khong-sinh.webp",
+      "description": "Những lời khuyên thông tuệ của thiền sư giúp con người vượt qua nỗi sợ hãi lớn nhất về sự tồn tại và cái chết.",
+      "publisher": "NXB Thế Giới",
+      "year": 2019,
+      "pages": 250
+    },
+    {
+      "id": "9",
+      "title": "Dạy Con Làm Giàu - Tập 1",
+      "author": "Robert T. Kiyosaki",
+      "categoryId": "3",
+      "price": 80000,
+      "stock": 150,
+      "rating": 4.8,
+      "soldCount": 300,
+      "image": "/images/day-con-lam-giau.webp",
+      "description": "Bài học tài chính vỡ lòng về cách quản lý dòng tiền, sự khác biệt trong tư duy của người giàu và người nghèo.",
+      "publisher": "NXB Trẻ",
+      "year": 2021,
+      "pages": 350
+    },
+    {
+      "id": "10",
+      "title": "Khởi Nghiệp Bán Lẻ",
+      "author": "Trần Thanh Phong",
+      "categoryId": "3",
+      "price": 199000,
+      "stock": 40,
+      "rating": 4.5,
+      "soldCount": 180,
+      "image": "/images/khoi-nghiep-ban-le.webp",
+      "description": "Bí quyết thành công và kinh nghiệm thực chiến để mở và vận hành những chuỗi cửa hàng bán lẻ đông khách.",
+      "publisher": "NXB Công Thương",
+      "year": 2020,
+      "pages": 290
+    },
+    {
+      "id": "11",
+      "title": "Giàu Từ Chứng Khoán",
+      "author": "John Boik",
+      "categoryId": "3",
+      "price": 159000,
+      "stock": 60,
+      "rating": 4.6,
+      "soldCount": 250,
+      "image": "/images/giau-tu-chung-khoan.webp",
+      "description": "Đúc kết kinh nghiệm từ những nhà đầu tư vĩ đại nhất để tìm ra phương pháp giao dịch cổ phiếu hiệu quả.",
+      "publisher": "NXB Tài Chính",
+      "year": 2018,
+      "pages": 310
+    },
+    {
+      "id": "12",
+      "title": "Thành Bại Tại Chốt Sales",
+      "author": "Matthew Pollard",
+      "categoryId": "3",
+      "price": 268000,
+      "stock": 35,
+      "rating": 4.7,
+      "soldCount": 200,
+      "image": "/images/thanh-bai-tai-chot-sales.jpg",
+      "description": "Cẩm nang hướng dẫn cách thức bán hàng tự nhiên, không cần áp lực, phù hợp ngay cả với những người hướng nội.",
+      "publisher": "NXB Thanh Niên",
+      "year": 2021,
+      "pages": 275
+    },
+    {
+      "id": "13",
+      "title": "Búp Sen Xanh",
+      "author": "Sơn Tùng",
+      "categoryId": "4",
+      "price": 60000,
+      "stock": 80,
+      "rating": 4.9,
+      "soldCount": 450,
+      "image": "/images/bup-sen-xanh.webp",
+      "description": "Tiểu thuyết lịch sử tái hiện một cách chân thực và sống động về thời niên thiếu của Chủ tịch Hồ Chí Minh.",
+      "publisher": "NXB Kim Đồng",
+      "year": 2022,
+      "pages": 360
+    },
+    {
+      "id": "14",
+      "title": "Harry Potter Và Hòn Đá Phù Thủy",
+      "author": "J.K. Rowling",
+      "categoryId": "4",
+      "price": 145000,
+      "stock": 100,
+      "rating": 5,
+      "soldCount": 300,
+      "image": "/images/harry-potter-1.webp",
+      "description": "Tập đầu tiên mở ra thế giới phép thuật huyền diệu cùng cậu bé Harry Potter tại trường Hogwarts.",
+      "publisher": "NXB Trẻ",
+      "year": 2020,
+      "pages": 412
+    },
+    {
+      "id": "15",
+      "title": "Đảo Mộng Mơ",
+      "author": "Nguyễn Nhật Ánh",
+      "categoryId": "4",
+      "price": 75000,
+      "stock": 120,
+      "rating": 4.8,
+      "soldCount": 350,
+      "image": "/images/dao-mong-mo.webp",
+      "description": "Cuốn sách tuyệt đẹp về trí tưởng tượng phong phú và thế giới trẻ thơ trong veo qua ánh nhìn của bé Tin.",
+      "publisher": "NXB Trẻ",
+      "year": 2010,
+      "pages": 248
+    },
+    {
+      "id": "16",
+      "title": "Anne Tóc Đỏ Dưới Chái Nhà Xanh",
+      "author": "L.M. Montgomery",
+      "categoryId": "4",
+      "price": 120000,
+      "stock": 55,
+      "rating": 4.8,
+      "soldCount": 200,
+      "image": "/images/anne-toc-do.webp",
+      "description": "Câu chuyện cảm động về cô bé mồ côi Anne giàu trí tưởng tượng và hành trình thay đổi vùng quê Avonlea bình yên.",
+      "publisher": "NXB Hội Nhà Văn",
+      "year": 2019,
+      "pages": 430
+    },
+    {
+      "id": "17",
+      "title": "Sổ Tay Khoa Học Máy Tính Và Mã Hóa",
+      "author": "Grant Smith",
+      "categoryId": "5",
+      "price": 395000,
+      "stock": 25,
+      "rating": 4.5,
+      "soldCount": 100,
+      "image": "/images/lap-rap-may-tinh.webp",
+      "description": "Hướng dẫn chi tiết về tương thích phần cứng, cách gắn linh kiện trên bo mạch chủ, thiết lập bảo mật BIOS và xử lý lỗi khởi động.",
+      "publisher": "NXB Bách Khoa",
+      "year": 2022,
+      "pages": 310
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "bookId": "1",
+      "userId": "2",
+      "rating": 5,
+      "comment": "Một câu chuyện đầy cảm hứng về việc theo đuổi ước mơ và tìm kiếm ý nghĩa cuộc sống.",
+      "date": "2026-07-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "bookId": "5",
+      "userId": "3",
+      "rating": 4,
+      "comment": "Cuốn sách tuyệt vời về nghệ thuật giao tiếp, giúp tôi cải thiện kỹ năng xã hội.",
+      "date": "2026-07-10T15:30:00Z"
+    },
+    {
+      "id": "3",
+      "bookId": "14",
+      "userId": "2",
+      "rating": 5,
+      "comment": "Bản dịch tốt, sách in đẹp, đọc lại vẫn thấy lôi cuốn như ngày xưa.",
+      "date": "2026-07-13T10:15:00Z"
+    }
+  ],
+  "carts": [
+    {
+      "id": "1",
+      "userId": "2",
+      "items": [
+        {
+          "bookId": "5",
+          "title": "Đắc Nhân Tâm (Tái bản)",
+          "quantity": 1,
+          "price": 86000,
+          "image": "/images/dac-nhan-tam.jpg"
+        }
+      ]
+    },
+    {
+      "userId": "yUGmB9aEeNw",
+      "items": [
+        {
+          "bookId": "3",
+          "title": "Cảm Ơn Người Lớn",
+          "price": 110000,
+          "quantity": 2,
+          "image": "/images/cam-on-nguoi-lon.webp"
+        },
+        {
+          "bookId": "4",
+          "title": "Mật Mã Da Vinci",
+          "price": 145000,
+          "quantity": 1,
+          "image": "/images/mat-ma-da-vinci.webp"
+        },
+        {
+          "bookId": "7",
+          "title": "Muôn Kiếp Nhân Sinh",
+          "price": 168000,
+          "quantity": 1,
+          "image": "/images/muon-kiep-nhan-sinh.webp"
+        }
+      ],
+      "id": "VE4_UiEQs94"
+    }
+  ],
+  "orders": [
+    {
+      "id": "2",
+      "userId": "3",
+      "items": [
+        {
+          "bookId": "5",
+          "title": "Đắc Nhân Tâm (Tái bản)",
+          "quantity": 1,
+          "price": 86000
+        },
+        {
+          "bookId": "6",
+          "title": "Hiểu Về Trái Tim",
+          "quantity": 1,
+          "price": 158000
+        }
+      ],
+      "totalAmount": 244000,
+      "shippingAddress": "Cầu Giấy, Hà Nội",
+      "status": "pending",
+      "date": "2026-07-10T15:30:00Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
