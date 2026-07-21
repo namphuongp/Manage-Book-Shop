@@ -12,7 +12,6 @@ function Cart({ user, fetchCartCount }) {
     const [modalInfo, setModalInfo] = useState({ show: false, title: '', message: '' });
     const API_URL = 'http://localhost:9999';
 
-    // 1. Tải dữ liệu giỏ hàng khi vào trang
     useEffect(() => {
         if (!user) {
             setLoading(false);
@@ -38,7 +37,6 @@ function Cart({ user, fetchCartCount }) {
         }
     };
 
-    // 2. Xử lý cập nhật số lượng 
     const handleUpdateQuantity = async (targetBookId, newQuantity) => {
         if (!cart) return;
 
@@ -76,7 +74,7 @@ function Cart({ user, fetchCartCount }) {
         }
     };
 
-    // 3. Xử lý nút Xóa hẳn 1 sản phẩm
+    // Xóa khỏi giỏ
     const handleRemoveItem = async (targetBookId) => {
         if (!window.confirm('Bạn có chắc muốn xóa sản phẩm này khỏi giỏ hàng?')) return;
 
@@ -112,9 +110,10 @@ function Cart({ user, fetchCartCount }) {
     const showAlert = (title, message) => {
         setModalInfo({ show: true, title, message });
     };
-
+    const shippingFee = 30000;
     const hasItems = cart && cart.items && cart.items.length > 0;
     const cartTotalPrice = hasItems ? cart.items.reduce((total, item) => total + (item.price * item.quantity), 0) : 0;
+    const finalTotal = hasItems ? cartTotalPrice + shippingFee : 0;
 
     return (
         <Container className="my-5">
@@ -213,12 +212,12 @@ function Cart({ user, fetchCartCount }) {
                             </div>
                             <div className="d-flex justify-content-between mb-3 text-muted pb-3 border-bottom">
                                 <span>Phí vận chuyển:</span>
-                                <span>Chưa tính</span>
+                                <span>30,000đ</span>
                             </div>
 
                             <div className="d-flex justify-content-between mb-4 mt-2">
                                 <span className="fs-5 fw-bold">Tổng cộng:</span>
-                                <span className="fs-4 fw-bold text-danger">{cartTotalPrice.toLocaleString()}đ</span>
+                                <span className="fs-4 fw-bold text-danger">{finalTotal.toLocaleString()}đ</span>
                             </div>
 
                             <Button
@@ -234,7 +233,6 @@ function Cart({ user, fetchCartCount }) {
                     </Col>
                 </Row>
             )}
-            {/* centered */}
             <Modal show={modalInfo.show} onHide={() => setModalInfo({ ...modalInfo, show: false })}>
                 <Modal.Header closeButton>
                     <Modal.Title>{modalInfo.title}</Modal.Title>

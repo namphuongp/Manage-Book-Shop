@@ -42,7 +42,11 @@ function Login({ onLoginSuccess }) {
                 const user = res.data[0];
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 onLoginSuccess(user);
-                navigate('/');
+                if (user.role === 'admin') {
+                    navigate('/admin/books');
+                } else {
+                    navigate('/');
+                }
             } else {
                 setErrors({ ...newErrors, form: 'Email hoặc mật khẩu không chính xác!' });
             }

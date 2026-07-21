@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 function NavbarComponent({ user, onLogout, cartCount }) {
   return (
-    <Navbar bg="light" expand="lg" className="shadow-sm mb-4">
-      <Container>
-        <Navbar.Brand as={Link} to="/" className="fw-bold text-success">📚 Blue Libary</Navbar.Brand>
+    <Navbar bg="light" expand="lg" className="shadow-sm " fixed="top">
+      <Container fluid>
+        <Navbar.Brand as={Link} to="/" className="fw-bold text-success">Nova Library</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">

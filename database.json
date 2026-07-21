@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "1",
-      "email": "admin@fahasa.com",
+      "email": "admin@gmail.com",
       "password": "admin",
       "role": "admin",
       "fullName": "Quản Trị Viên",
@@ -65,19 +65,19 @@
   ],
   "books": [
     {
-      "id": "1",
       "title": "Nhà Giả Kim",
       "author": "Paulo Coelho",
       "categoryId": "1",
-      "price": 79000,
-      "stock": 150,
+      "price": 80000,
+      "stock": 100,
+      "image": "/images/nha-gia-kim.webp",
+      "publisher": "NXB Văn Học",
+      "pages": 227,
+      "description": "Câu chuyện giàu tính triết lý về hành trình đi tìm ước mơ, niềm tin và ý nghĩa cuộc sống của cậu bé chăn cừu Santiago.",
       "rating": 4.8,
       "soldCount": 300,
-      "image": "/images/nha-gia-kim.webp",
-      "description": "Câu chuyện giàu tính triết lý về hành trình đi tìm ước mơ, niềm tin và ý nghĩa cuộc sống của cậu bé chăn cừu Santiago.",
-      "publisher": "NXB Văn Học",
-      "year": 2020,
-      "pages": 227
+      "is_deleted": false,
+      "id": "1"
     },
     {
       "id": "2",
@@ -92,7 +92,8 @@
       "description": "Tự truyện đầy cảm động của một bác sĩ phẫu thuật thần kinh khi anh phải đối mặt với căn bệnh ung thư phổi giai đoạn cuối.",
       "publisher": "NXB Lao Động",
       "year": 2017,
-      "pages": 240
+      "pages": 240,
+      "is_deleted": false
     },
     {
       "id": "3",
@@ -107,7 +108,8 @@
       "description": "Tác phẩm đưa độc giả trở lại với những nhân vật quen thuộc trong Cho Tôi Xin Một Vé Đi Tuổi Thơ, với những suy ngẫm sâu sắc hơn.",
       "publisher": "NXB Trẻ",
       "year": 2018,
-      "pages": 268
+      "pages": 268,
+      "is_deleted": false
     },
     {
       "id": "4",
@@ -122,7 +124,8 @@
       "description": "Cuốn tiểu thuyết trinh thám gay cấn, giải mã những bí ẩn lịch sử và tôn giáo ẩn giấu trong các tác phẩm của Leonardo da Vinci.",
       "publisher": "NXB Văn Học",
       "year": 2021,
-      "pages": 550
+      "pages": 550,
+      "is_deleted": false
     },
     {
       "id": "5",
@@ -137,7 +140,8 @@
       "description": "Cuốn sách kinh điển mọi thời đại về nghệ thuật giao tiếp và thu phục lòng người.",
       "publisher": "NXB Tổng hợp TP.HCM",
       "year": 2022,
-      "pages": 320
+      "pages": 320,
+      "is_deleted": false
     },
     {
       "id": "6",
@@ -152,7 +156,8 @@
       "description": "Hành trình khám phá nội tâm và chữa lành những tổn thương thông qua góc nhìn thiền tập, giúp tìm lại bình yên.",
       "publisher": "NXB Tổng hợp TP.HCM",
       "year": 2023,
-      "pages": 480
+      "pages": 480,
+      "is_deleted": false
     },
     {
       "id": "7",
@@ -167,7 +172,8 @@
       "description": "Bức tranh kỳ vĩ về luật luân hồi, nhân quả trải dài qua nhiều kiếp sống của một doanh nhân tại Mỹ.",
       "publisher": "NXB Tổng hợp TP.HCM",
       "year": 2020,
-      "pages": 408
+      "pages": 408,
+      "is_deleted": false
     },
     {
       "id": "8",
@@ -182,7 +188,8 @@
       "description": "Những lời khuyên thông tuệ của thiền sư giúp con người vượt qua nỗi sợ hãi lớn nhất về sự tồn tại và cái chết.",
       "publisher": "NXB Thế Giới",
       "year": 2019,
-      "pages": 250
+      "pages": 250,
+      "is_deleted": false
     },
     {
       "id": "9",
@@ -197,7 +204,8 @@
       "description": "Bài học tài chính vỡ lòng về cách quản lý dòng tiền, sự khác biệt trong tư duy của người giàu và người nghèo.",
       "publisher": "NXB Trẻ",
       "year": 2021,
-      "pages": 350
+      "pages": 350,
+      "is_deleted": false
     },
     {
       "id": "10",
@@ -212,7 +220,8 @@
       "description": "Bí quyết thành công và kinh nghiệm thực chiến để mở và vận hành những chuỗi cửa hàng bán lẻ đông khách.",
       "publisher": "NXB Công Thương",
       "year": 2020,
-      "pages": 290
+      "pages": 290,
+      "is_deleted": false
     },
     {
       "id": "11",
@@ -227,22 +236,23 @@
       "description": "Đúc kết kinh nghiệm từ những nhà đầu tư vĩ đại nhất để tìm ra phương pháp giao dịch cổ phiếu hiệu quả.",
       "publisher": "NXB Tài Chính",
       "year": 2018,
-      "pages": 310
+      "pages": 310,
+      "is_deleted": false
     },
     {
-      "id": "12",
       "title": "Thành Bại Tại Chốt Sales",
       "author": "Matthew Pollard",
       "categoryId": "3",
       "price": 268000,
-      "stock": 35,
+      "stock": 0,
+      "image": "/images/thanh-bai-tai-chot-sales.jpg",
+      "publisher": "NXB Thanh Niên",
+      "pages": 275,
+      "description": "Cẩm nang hướng dẫn cách thức bán hàng tự nhiên, không cần áp lực, phù hợp ngay cả với những người hướng nội.",
       "rating": 4.7,
       "soldCount": 200,
-      "image": "/images/thanh-bai-tai-chot-sales.jpg",
-      "description": "Cẩm nang hướng dẫn cách thức bán hàng tự nhiên, không cần áp lực, phù hợp ngay cả với những người hướng nội.",
-      "publisher": "NXB Thanh Niên",
-      "year": 2021,
-      "pages": 275
+      "is_deleted": false,
+      "id": "12"
     },
     {
       "id": "13",
@@ -257,7 +267,8 @@
       "description": "Tiểu thuyết lịch sử tái hiện một cách chân thực và sống động về thời niên thiếu của Chủ tịch Hồ Chí Minh.",
       "publisher": "NXB Kim Đồng",
       "year": 2022,
-      "pages": 360
+      "pages": 360,
+      "is_deleted": false
     },
     {
       "id": "14",
@@ -272,7 +283,8 @@
       "description": "Tập đầu tiên mở ra thế giới phép thuật huyền diệu cùng cậu bé Harry Potter tại trường Hogwarts.",
       "publisher": "NXB Trẻ",
       "year": 2020,
-      "pages": 412
+      "pages": 412,
+      "is_deleted": false
     },
     {
       "id": "15",
@@ -287,7 +299,8 @@
       "description": "Cuốn sách tuyệt đẹp về trí tưởng tượng phong phú và thế giới trẻ thơ trong veo qua ánh nhìn của bé Tin.",
       "publisher": "NXB Trẻ",
       "year": 2010,
-      "pages": 248
+      "pages": 248,
+      "is_deleted": false
     },
     {
       "id": "16",
@@ -302,22 +315,39 @@
       "description": "Câu chuyện cảm động về cô bé mồ côi Anne giàu trí tưởng tượng và hành trình thay đổi vùng quê Avonlea bình yên.",
       "publisher": "NXB Hội Nhà Văn",
       "year": 2019,
-      "pages": 430
+      "pages": 430,
+      "is_deleted": false
     },
     {
-      "id": "17",
       "title": "Sổ Tay Khoa Học Máy Tính Và Mã Hóa",
       "author": "Grant Smith",
       "categoryId": "5",
-      "price": 395000,
+      "price": 400000,
       "stock": 25,
+      "image": "/images/lap-rap-may-tinh.webp",
+      "publisher": "NXB Bách Khoa",
+      "pages": 310,
+      "description": "Hướng dẫn chi tiết về tương thích phần cứng, cách gắn linh kiện trên bo mạch chủ, thiết lập bảo mật BIOS và xử lý lỗi khởi động.",
       "rating": 4.5,
       "soldCount": 100,
-      "image": "/images/lap-rap-may-tinh.webp",
-      "description": "Hướng dẫn chi tiết về tương thích phần cứng, cách gắn linh kiện trên bo mạch chủ, thiết lập bảo mật BIOS và xử lý lỗi khởi động.",
-      "publisher": "NXB Bách Khoa",
-      "year": 2022,
-      "pages": 310
+      "is_deleted": false,
+      "id": "17"
+    },
+
+    {
+      "id": "18",
+      "title": "ABC",
+      "author": "abc",
+      "categoryId": "2",
+      "price": 80000,
+      "stock": 100,
+      "image": "1",
+      "publisher": "NXB Văn Học",
+      "pages": 22,
+      "description": "",
+      "rating": 5,
+      "soldCount": 0,
+      "is_deleted": false
     }
   ],
   "reviews": [
@@ -346,14 +376,37 @@
     },
     {
       "userId": "yUGmB9aEeNw",
+      "items": [],
+      "id": "VE4_UiEQs94"
+    },
+    {
+      "id": "g0CQ9qxaIuc",
+      "userId": "bPpJTDZ_BpQ",
+      "items": []
+    },
+    {
+      "id": "yRz17tcB7u8",
+      "userId": "LS1LaU9A3O0",
+      "items": []
+    },
+    {
+      "id": "2",
+      "userId": "1",
       "items": [
         {
-          "bookId": "3",
-          "title": "Cảm Ơn Người Lớn",
-          "price": 110000,
-          "quantity": 2,
-          "image": "/images/cam-on-nguoi-lon.webp"
-        },
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 1,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "userId": "yUGmB9aEeNw",
+      "items": [
         {
           "bookId": "4",
           "title": "Mật Mã Da Vinci",
@@ -383,10 +436,40 @@
           "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
         }
       ],
-      "id": "VE4_UiEQs94"
+      "itemsTotal": 580000,
+      "shippingFee": 30000,
+      "totalPrice": 610000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Số 5, Đường ABC, Thanh Xuân, Hà Nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-21T14:12:04.643Z",
+      "status": "cancelled",
+      "id": 1
     },
     {
-      "id": "g0CQ9qxaIuc",
+      "userId": "yUGmB9aEeNw",
+      "items": [
+        {
+          "bookId": "13",
+          "title": "Búp Sen Xanh",
+          "price": 60000,
+          "quantity": 1,
+          "image": "/images/bup-sen-xanh.webp"
+        }
+      ],
+      "itemsTotal": 60000,
+      "shippingFee": 30000,
+      "totalPrice": 90000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Thanh Xuân, Hà Nội",
+      "paymentMethod": "BANKING",
+      "date": "2026-07-21T14:16:25.924Z",
+      "status": "cancelled",
+      "id": 2
+    },
+    {
       "userId": "bPpJTDZ_BpQ",
       "items": [
         {
@@ -403,36 +486,216 @@
           "quantity": 1,
           "image": "/images/dac-nhan-tam.jpg"
         }
-      ]
+      ],
+      "itemsTotal": 849000,
+      "shippingFee": 30000,
+      "totalPrice": 879000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Hà nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-21T14:32:51.845Z",
+      "status": "cancelled",
+      "id": 3
     },
     {
-      "id": "yRz17tcB7u8",
+      "userId": "bPpJTDZ_BpQ",
+      "items": [
+        {
+          "bookId": "3",
+          "title": "Cảm Ơn Người Lớn",
+          "price": 110000,
+          "quantity": 2,
+          "image": "/images/cam-on-nguoi-lon.webp"
+        }
+      ],
+      "itemsTotal": 220000,
+      "shippingFee": 30000,
+      "totalPrice": 250000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Hà nội",
+      "paymentMethod": "BANKING",
+      "date": "2026-07-21T14:33:27.678Z",
+      "status": "cancelled",
+      "id": 4
+    },
+    {
+      "userId": "bPpJTDZ_BpQ",
+      "items": [
+        {
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 1,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
+        }
+      ],
+      "itemsTotal": 109000,
+      "shippingFee": 30000,
+      "totalPrice": 139000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Hà nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-21T14:36:04.569Z",
+      "status": "completed",
+      "id": 5
+    },
+    {
+      "userId": "LS1LaU9A3O0",
+      "items": [
+        {
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 1,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
+        }
+      ],
+      "itemsTotal": 109000,
+      "shippingFee": 30000,
+      "totalPrice": 139000,
+      "fullName": "Bảo Ngọc",
+      "phone": "0123456780",
+      "address": "Hà nội",
+      "paymentMethod": "BANKING",
+      "date": "2026-07-21T14:37:29.404Z",
+      "status": "cancelled",
+      "id": 6
+    },
+    {
       "userId": "LS1LaU9A3O0",
       "items": [
         {
           "bookId": "13",
           "title": "Búp Sen Xanh",
           "price": 60000,
-          "quantity": 9,
+          "quantity": 1,
           "image": "/images/bup-sen-xanh.webp"
-        },
+        }
+      ],
+      "itemsTotal": 60000,
+      "shippingFee": 30000,
+      "totalPrice": 90000,
+      "fullName": "Bảo Ngọc",
+      "phone": "0123456780",
+      "address": "Hà nội",
+      "paymentMethod": "BANKING",
+      "date": "2026-07-21T14:46:34.288Z",
+      "status": "completed",
+      "id": 7
+    },
+    {
+      "userId": "LS1LaU9A3O0",
+      "items": [
         {
           "bookId": "2",
           "title": "Khi Hơi Thở Hóa Thinh Không",
           "price": 109000,
-          "quantity": 71,
-          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
-        },
-        {
-          "bookId": "3",
-          "title": "Cảm Ơn Người Lớn",
-          "price": 110000,
           "quantity": 1,
-          "image": "/images/cam-on-nguoi-lon.webp"
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
         }
-      ]
+      ],
+      "itemsTotal": 109000,
+      "shippingFee": 30000,
+      "totalPrice": 139000,
+      "fullName": "Bảo Ngọc",
+      "phone": "0123456780",
+      "address": "Hà nội",
+      "paymentMethod": "BANKING",
+      "date": "2026-07-21T15:08:24.727Z",
+      "status": "cancelled",
+      "id": 8
+    },
+    {
+      "userId": "LS1LaU9A3O0",
+      "items": [
+        {
+          "bookId": "13",
+          "title": "Búp Sen Xanh",
+          "price": 60000,
+          "quantity": 1,
+          "image": "/images/bup-sen-xanh.webp"
+        }
+      ],
+      "itemsTotal": 60000,
+      "shippingFee": 30000,
+      "totalPrice": 90000,
+      "fullName": "Bảo Ngọc",
+      "phone": "0123456780",
+      "address": "Hà nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-21T15:09:45.362Z",
+      "status": "completed",
+      "id": 9
+    },
+    {
+      "userId": "bPpJTDZ_BpQ",
+      "items": [
+        {
+          "bookId": "1",
+          "title": "Nhà Giả Kim",
+          "price": 79000,
+          "quantity": 1,
+          "image": "/images/nha-gia-kim.webp"
+        }
+      ],
+      "itemsTotal": 79000,
+      "shippingFee": 30000,
+      "totalPrice": 109000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Hà nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-21T15:25:57.397Z",
+      "status": "cancelled",
+      "id": 10
+    },
+    {
+      "userId": "bPpJTDZ_BpQ",
+      "items": [
+        {
+          "bookId": "13",
+          "title": "Búp Sen Xanh",
+          "price": 60000,
+          "quantity": 1,
+          "image": "/images/bup-sen-xanh.webp"
+        }
+      ],
+      "itemsTotal": 60000,
+      "shippingFee": 30000,
+      "totalPrice": 90000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Hà nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-21T15:26:10.886Z",
+      "status": "completed",
+      "id": 11
+    },
+    {
+      "userId": "bPpJTDZ_BpQ",
+      "items": [
+        {
+          "bookId": "0Z_QSE4",
+          "title": "ABC",
+          "price": 20000,
+          "quantity": 1,
+          "image": "/images/abc"
+        }
+      ],
+      "itemsTotal": 20000,
+      "shippingFee": 30000,
+      "totalPrice": 50000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Hà nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-21T15:32:02.635Z",
+      "status": "accepted",
+      "id": 12
     }
   ],
-  "orders": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

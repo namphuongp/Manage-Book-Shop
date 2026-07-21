@@ -50,7 +50,6 @@ function BookDetail({ user, fetchCartCount }) {
     }, [id]);
 
 
-    //Hàm liên quan tới giỏ hàng/thanh toán
     const handleAddToCart = async () => {
         if (!user) {
             setShowLoginModal(true);
@@ -64,7 +63,6 @@ function BookDetail({ user, fetchCartCount }) {
 
             if (cartData) {
                 const itemExists = cartData.items.find(i => i.bookId === book.id);
-                // Kiểm tra tồn kho trước khi thêm
                 if (itemExists && itemExists.quantity >= book.stock) {
                     alert('Số lượng trong giỏ hàng đã đạt mức tối đa trong kho!');
                     return;
@@ -152,37 +150,28 @@ function BookDetail({ user, fetchCartCount }) {
 
         try {
             setIsUpdatingCart(true);
-
-            // 1. Kiểm tra tồn kho nếu user bấm tăng (+)
             const currentItem = currentCart.items.find(i => i.bookId === targetBookId);
+            //check kho
             if (newQuantity > (currentItem?.quantity || 0)) {
-                // Fetch tồn kho mới nhất của sản phẩm đó từ DB
                 const bookCheckRes = await axios.get(`${API_URL}/books/${targetBookId}`);
                 const stock = bookCheckRes.data.stock;
 
                 if (newQuantity > stock) {
                     alert('Số lượng vượt quá số sản phẩm đang có trong kho!');
                     setIsUpdatingCart(false);
-                    return; // Chặn không cho tăng tiếp
+                    return; 
                 }
             }
-
-            // 2. Tính toán danh sách item mới
             let updatedItems = [];
             if (newQuantity === 0) {
-                // Xóa khỏi giỏ nếu về 0
                 updatedItems = currentCart.items.filter(i => i.bookId !== targetBookId);
             } else {
-                // Cập nhật số lượng mới
                 updatedItems = currentCart.items.map(i =>
                     i.bookId === targetBookId ? { ...i, quantity: newQuantity } : i
                 );
             }
 
-            // 3. Đẩy lên API
             const res = await axios.patch(`${API_URL}/carts/${currentCart.id}`, { items: updatedItems });
-
-            // 4. Cập nhật giao diện
             setCurrentCart(res.data);
             if (fetchCartCount) fetchCartCount(user.id);
 
@@ -399,13 +388,11 @@ function BookDetail({ user, fetchCartCount }) {
                                 <div className="flex-grow-1">
                                     <h6 className="mb-1 text-truncate" style={{ maxWidth: '220px' }}>{item.title}</h6>
 
-                                    {/* Hiển thị Đơn giá */}
                                     <div className="text-muted mb-2" style={{ fontSize: '0.85rem' }}>
                                         Đơn giá: {(item.price).toLocaleString()}đ
                                     </div>
 
                                     <div className="d-flex justify-content-between align-items-center">
-                                        {/* Nút điều chỉnh số lượng */}
                                         <ButtonGroup size="sm">
                                             <Button
                                                 variant="outline-secondary"
