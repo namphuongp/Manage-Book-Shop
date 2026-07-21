@@ -10,13 +10,31 @@
       "address": "Hà Nội, Việt Nam"
     },
     {
+      "id": "bPpJTDZ_BpQ",
       "email": "abc123@example.com",
       "password": "abc123",
       "fullName": "Phạm Nam Phương",
       "phone": "0393219119",
       "address": "",
-      "role": "customer",
-      "id": "yUGmB9aEeNw"
+      "role": "customer"
+    },
+    {
+      "id": "RTg6NHyZijs",
+      "email": "caoson123@gmail.com",
+      "password": "abc123123",
+      "fullName": "Cao Sơn",
+      "phone": "0111111111",
+      "address": "",
+      "role": "customer"
+    },
+    {
+      "id": "LS1LaU9A3O0",
+      "email": "abcd123@example.com",
+      "password": "abc123",
+      "fullName": "Bảo Ngọc",
+      "phone": "0123456780",
+      "address": "",
+      "role": "customer"
     }
   ],
   "categories": [
@@ -304,28 +322,12 @@
   ],
   "reviews": [
     {
-      "id": "1",
-      "bookId": "1",
-      "userId": "2",
+      "id": "plMRJKi2mwQ",
+      "bookId": "2",
+      "userId": "bPpJTDZ_BpQ",
       "rating": 5,
-      "comment": "Một câu chuyện đầy cảm hứng về việc theo đuổi ước mơ và tìm kiếm ý nghĩa cuộc sống.",
-      "date": "2026-07-01T10:00:00Z"
-    },
-    {
-      "id": "2",
-      "bookId": "5",
-      "userId": "3",
-      "rating": 4,
-      "comment": "Cuốn sách tuyệt vời về nghệ thuật giao tiếp, giúp tôi cải thiện kỹ năng xã hội.",
-      "date": "2026-07-10T15:30:00Z"
-    },
-    {
-      "id": "3",
-      "bookId": "14",
-      "userId": "2",
-      "rating": 5,
-      "comment": "Bản dịch tốt, sách in đẹp, đọc lại vẫn thấy lôi cuốn như ngày xưa.",
-      "date": "2026-07-13T10:15:00Z"
+      "comment": "Một quyển sách tuyệt vời",
+      "date": "2026-07-16T03:59:18.783Z"
     }
   ],
   "carts": [
@@ -365,34 +367,72 @@
           "price": 168000,
           "quantity": 1,
           "image": "/images/muon-kiep-nhan-sinh.webp"
-        }
-      ],
-      "id": "VE4_UiEQs94"
-    }
-  ],
-  "orders": [
-    {
-      "id": "2",
-      "userId": "3",
-      "items": [
-        {
-          "bookId": "5",
-          "title": "Đắc Nhân Tâm (Tái bản)",
-          "quantity": 1,
-          "price": 86000
         },
         {
           "bookId": "6",
           "title": "Hiểu Về Trái Tim",
+          "price": 158000,
           "quantity": 1,
-          "price": 158000
+          "image": "/images/hieu-ve-trai-tim.webp"
+        },
+        {
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 1,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
         }
       ],
-      "totalAmount": 244000,
-      "shippingAddress": "Cầu Giấy, Hà Nội",
-      "status": "pending",
-      "date": "2026-07-10T15:30:00Z"
+      "id": "VE4_UiEQs94"
+    },
+    {
+      "id": "g0CQ9qxaIuc",
+      "userId": "bPpJTDZ_BpQ",
+      "items": [
+        {
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 7,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
+        },
+        {
+          "bookId": "5",
+          "title": "Đắc Nhân Tâm (Tái bản)",
+          "price": 86000,
+          "quantity": 1,
+          "image": "/images/dac-nhan-tam.jpg"
+        }
+      ]
+    },
+    {
+      "id": "yRz17tcB7u8",
+      "userId": "LS1LaU9A3O0",
+      "items": [
+        {
+          "bookId": "13",
+          "title": "Búp Sen Xanh",
+          "price": 60000,
+          "quantity": 9,
+          "image": "/images/bup-sen-xanh.webp"
+        },
+        {
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 71,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
+        },
+        {
+          "bookId": "3",
+          "title": "Cảm Ơn Người Lớn",
+          "price": 110000,
+          "quantity": 1,
+          "image": "/images/cam-on-nguoi-lon.webp"
+        }
+      ]
     }
   ],
+  "orders": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

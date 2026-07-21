@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import BookList from './pages/clients/BookList';
+import BookDetail from './pages/clients/BookDetail';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Cart from './pages/clients/Cart'
 import NavbarComponent from './components/NavbarComponent';
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
       }
     } catch (err) { console.error("Lỗi lấy giỏ hàng"); }
   };
+
   useEffect(() => {
     if (currentUser) fetchCartCount(currentUser.id);
   }, [currentUser]);
@@ -44,11 +47,12 @@ function App() {
 
       <Routes>
         {/* Ai cũng có thể vào trang chủ và trang chi tiết */}
-        <Route path="/" element={<BookList user={currentUser} />} />
-
+        <Route path="/" element={<BookList user={currentUser} fetchCartCount={fetchCartCount} />} />
+        <Route path="/book/:id" element={<BookDetail user={currentUser} fetchCartCount={fetchCartCount} />} />
         {/* Trang Login/Register: Nếu đã login rồi thì chặn không cho vào lại */}
         <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login onLoginSuccess={setCurrentUser} />} />
         <Route path="/register" element={currentUser ? <Navigate to="/" /> : <Register />} />
+        <Route path="/cart" element={<Cart user={currentUser} fetchCartCount={fetchCartCount} />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
