@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Form, Spinner, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, Form, Spinner, Alert, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,10 +11,9 @@ function BookList({ user, fetchCartCount }) {
     const [hoveredCard, setHoveredCard] = useState(null);
     const API_URL = 'http://localhost:9999';
 
-    // States cho Filter & Search
+    const [favorites, setFavorites] = useState([]);
     const [search, setSearch] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All');
-    const [maxPrice, setMaxPrice] = useState(0);
     const [selectedPrice, setSelectedPrice] = useState(0);
 
     const navigate = useNavigate();
@@ -23,22 +22,29 @@ function BookList({ user, fetchCartCount }) {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const [booksRes, catRes] = await Promise.all([
+                const requests = [
                     axios.get(`${API_URL}/books`),
                     axios.get(`${API_URL}/categories`)
-                ]);
+                ];
 
-                setBooks(booksRes.data);
-                setCategories(catRes.data);
-
-                if (booksRes.data.length > 0) {
-                    const highestPrice = Math.max(...booksRes.data.map(book => book.price));
-                    setMaxPrice(highestPrice);
-                    setSelectedPrice(highestPrice);
+                if (user?.id) {
+                    requests.push(axios.get(`${API_URL}/favorites?userId=${user.id}`));
                 }
 
+                const responses = await Promise.all(requests);
+                setBooks(responses[0].data);
+                setCategories(responses[1].data);
+
+                if (user?.id && responses[2]) {
+                    setFavorites(responses[2].data);
+                }
+
+                if (responses[0].data.length > 0) {
+                    const highestPrice = Math.max(...responses[0].data.map(book => book.price));
+                    setSelectedPrice(highestPrice);
+                }
             } catch (err) {
-                setError('Không thể kết nối tới server. Vui lòng kiểm tra lại cổng 9999.');
+                setError('Không thể kết nối tới server.');
             } finally {
                 setLoading(false);
             }
@@ -46,7 +52,7 @@ function BookList({ user, fetchCartCount }) {
         fetchData();
     }, []);
 
-    // Logic lọc dữ liệu
+    // lọc dữ liệu
     const filteredBooks = books.filter(book => {
         const matchesSearch = book.title.toLowerCase().includes(search.toLowerCase()) ||
             book.author.toLowerCase().includes(search.toLowerCase());
@@ -61,9 +67,35 @@ function BookList({ user, fetchCartCount }) {
     if (loading) return <Container className="text-center my-5"><Spinner animation="border" variant="success" /></Container>;
     if (error) return <Container className="my-5"><Alert variant="danger">{error}</Alert></Container>;
 
+    const handleToggleFavorite = async (e, book) => {
+        e.stopPropagation();
+
+        if (!user) {
+            alert('Vui lòng đăng nhập để thêm sách vào yêu thích!');
+            return;
+        }
+
+        const existingFav = favorites.find(fav => fav.bookId === book.id);
+
+        try {
+            if (existingFav) {
+                await axios.delete(`${API_URL}/favorites/${existingFav.id}`);
+                setFavorites(favorites.filter(fav => fav.id !== existingFav.id));
+            } else {
+                const newFav = {
+                    userId: user.id,
+                    bookId: book.id,
+                    bookDetails: book
+                };
+                const res = await axios.post(`${API_URL}/favorites`, newFav);
+                setFavorites([...favorites, res.data]);
+            }
+        } catch (error) {
+            alert('Có lỗi xảy ra, vui lòng thử lại!');
+        }
+    };
     return (
         <Container className="my-4">
-            {/* 1. Phần Best Sellers */}
             <h3 className="fw-bold mb-3">
                 <i className="bi bi-fire text-danger me-2"></i>Sách Bán Chạy Nhất
             </h3>
@@ -92,11 +124,7 @@ function BookList({ user, fetchCartCount }) {
                                 <p className="small text-muted mb-1">{book.author}</p>
                                 <h6 className="text-truncate fw-bold">{book.title}</h6>
                                 <p className="fw-bold text-danger fs-5 mb-1">{book.price.toLocaleString()}đ</p>
-                                <p className="text-warning mb-0" style={{ fontSize: '0.9rem' }}>
-                                    {"★".repeat(Math.floor(book.rating))}
-                                    {"☆".repeat(5 - Math.floor(book.rating))}
-                                    <span className="text-muted ms-1">({book.rating})</span>
-                                </p>
+
                             </Card.Body>
                         </Card>
                     </Col>
@@ -131,29 +159,6 @@ function BookList({ user, fetchCartCount }) {
                                 {categories.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
                             </Form.Select>
                         </Col>
-
-                        {/* <Col lg={5} md={12}>
-                            <div className="px-lg-3">
-                                <div className="d-flex justify-content-between align-items-center mb-2">
-                                    <Form.Label className="small text-muted fw-bold mb-0">Mức giá tối đa</Form.Label>
-                                    <span className="badge bg-danger px-3 py-2" style={{ borderRadius: '8px', fontSize: '0.9rem' }}>
-                                        {Number(selectedPrice).toLocaleString()} đ
-                                    </span>
-                                </div>
-                                <Form.Range
-                                    min={0}
-                                    max={maxPrice}
-                                    step={10000}
-                                    value={selectedPrice}
-                                    onChange={(e) => setSelectedPrice(Number(e.target.value))}
-                                    style={{ height: '0.5rem' }}
-                                />
-                                <div className="d-flex justify-content-between text-muted mt-1" style={{ fontSize: '0.8rem', fontWeight: '500' }}>
-                                    <span>0đ</span>
-                                    <span>{Number(maxPrice).toLocaleString()}đ</span>
-                                </div>
-                            </div>
-                        </Col> */}
                     </Row>
                 </Card.Body>
             </Card>
@@ -161,53 +166,68 @@ function BookList({ user, fetchCartCount }) {
             {/* Danh sách sản phẩm */}
             <Row className="g-4 mb-5">
                 {filteredBooks.length > 0 ? (
-                    filteredBooks.map(book => (
-                        <Col lg={3} md={4} sm={6} key={book.id}>
-                            <Card
-                                onClick={() => navigate(`/book/${book.id}`)}
-                                className="h-100 border-0"
-                                onMouseEnter={() => setHoveredCard(book.id)}
-                                onMouseLeave={() => setHoveredCard(null)}
-                                style={{
-                                    borderRadius: '15px',
-                                    overflow: 'hidden',
-                                    transition: 'all 0.3s ease',
-                                    boxShadow: hoveredCard === book.id ? '0 15px 30px rgba(0,0,0,0.2)' : '0 5px 15px rgba(0,0,0,0.05)',
-                                    transform: hoveredCard === book.id ? 'translateY(-10px)' : 'translateY(0)',
-                                    cursor: 'pointer'
-                                }}
-                            >
-                                <div style={{ overflow: 'hidden', height: '260px', backgroundColor: '#f9f9f9', padding: '20px' }}>
-                                    <Card.Img
-                                        variant="top"
-                                        src={book.image}
-                                        style={{
-                                            height: '100%',
-                                            width: '100%',
-                                            objectFit: 'contain',
-                                            transition: 'transform 0.3s ease',
-                                            transform: hoveredCard === book.id ? 'scale(1.05)' : 'scale(1)'
-                                        }}
-                                    />
-                                </div>
+                    filteredBooks.map(book => {
+                        const isFavorited = favorites.some(fav => fav.bookId === book.id);
+                        return (
 
-                                <Card.Body className="text-center d-flex flex-column justify-content-between">
-                                    <div>
-                                        <h6 className="fw-bold mb-2 text-truncate" style={{ color: '#2c3e50' }}>{book.title}</h6>
-                                        <p className="small text-muted mb-3">{book.author}</p>
+                            <Col lg={3} md={4} sm={6} key={book.id}>
+                                <Card
+                                    onClick={() => navigate(`/book/${book.id}`)}
+                                    className="h-100 border-0"
+                                    onMouseEnter={() => setHoveredCard(book.id)}
+                                    onMouseLeave={() => setHoveredCard(null)}
+                                    style={{
+                                        borderRadius: '15px',
+                                        overflow: 'hidden',
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: hoveredCard === book.id ? '0 15px 30px rgba(0,0,0,0.2)' : '0 5px 15px rgba(0,0,0,0.05)',
+                                        transform: hoveredCard === book.id ? 'translateY(-10px)' : 'translateY(0)',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    <div style={{ overflow: 'hidden', height: '260px', backgroundColor: '#f9f9f9', padding: '20px' }}>
+                                        <Card.Img
+                                            variant="top"
+                                            src={book.image}
+                                            style={{
+                                                height: '100%',
+                                                width: '100%',
+                                                objectFit: 'contain',
+                                                transition: 'transform 0.3s ease',
+                                                transform: hoveredCard === book.id ? 'scale(1.05)' : 'scale(1)'
+                                            }}
+                                        />
                                     </div>
-                                    <div>
-                                        <h5 className="text-danger fw-bold mb-2">{book.price.toLocaleString()}đ</h5>
-                                        <p className="text-warning mb-0" style={{ fontSize: '0.9rem' }}>
-                                            {"★".repeat(Math.floor(book.rating))}
-                                            {"☆".repeat(5 - Math.floor(book.rating))}
-                                            <span className="text-muted ms-1">({book.rating})</span>
-                                        </p>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))
+                                    <Button
+                                        size="sm"
+                                        variant={isFavorited ? "danger" : "outline-danger"}
+                                        className="m-2"
+                                        onClick={(e) => handleToggleFavorite(e, book)}
+                                    >
+                                        <i className={isFavorited ? "bi bi-heart-fill me-1" : "bi bi-heart me-1"}></i>
+                                        {isFavorited ? 'Đã yêu thích' : 'Thêm vào yêu thích'}
+                                    </Button>
+                                    <Card.Body className="text-center d-flex flex-column justify-content-between">
+
+                                        <div>
+                                            <h6 className="fw-bold mb-2 text-truncate" style={{ color: '#2c3e50' }}>{book.title}</h6>
+                                            <p className="small text-muted mb-3">{book.author}</p>
+                                        </div>
+                                        <div>
+                                            <h5 className="text-danger fw-bold mb-2">{book.price.toLocaleString()}đ</h5>
+                                            <div>
+                                                {book.stock === 0 ? (
+                                                    <p>Hết hàng</p>
+                                                ) : book.stock <= 5 ? (
+                                                    <p>Còn {book.stock} quyển</p>
+                                                ) : ""}
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        );
+                    })
                 ) : (
                     <Col>
                         <Alert variant="warning" className="text-center py-5 border-0 shadow-sm" style={{ borderRadius: '15px' }}>

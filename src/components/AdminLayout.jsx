@@ -49,6 +49,16 @@ function AdminLayout({ user, onLogout }) {
                         > Quản lý Đơn Hàng
                         </Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link
+                            as={Link}
+                            to="/admin/dashboard"
+                            active={location.pathname === '/admin/dashboard'}
+                            className={`text-white d-flex align-items-center py-2 px-3 ${location.pathname === '/admin/dashboard' ? 'bg-success' : ''}`}
+                            style={{ borderRadius: '8px' }}
+                        > Báo cáo
+                        </Nav.Link>
+                    </Nav.Item>
                 </Nav>
 
                 <hr className="text-secondary" />

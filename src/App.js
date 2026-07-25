@@ -11,10 +11,11 @@ import Checkout from './pages/clients/Checkout';
 import OrderSuccess from './pages/clients/OrderSuccess';
 import OrderHistory from './pages/clients/OrderHistory';
 import NavbarComponent from './components/NavbarComponent';
-
+import Favorite from './pages/clients/Favorite';
 import AdminLayout from './components/AdminLayout';
 import AdminOrders from './pages/admin/AdminOrders';
 import AdminProducts from './pages/admin/AdminProducts';
+import Dashboard from './components/dashboard'
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [cartCount, setCartCount] = useState(0);
@@ -54,6 +55,7 @@ function App() {
           <Route element={<AdminLayout user={currentUser} onLogout={handleLogout} />}>
             <Route path="/admin/orders" element={<AdminOrders user={currentUser} />} />
             <Route path="/admin/books" element={<AdminProducts />} />
+            <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="*" element={<Navigate to="/admin/orders" />} />
           </Route>
         ) : (
@@ -73,7 +75,7 @@ function App() {
             <Route path="/checkout" element={<Checkout user={currentUser} fetchCartCount={fetchCartCount} />} />
             <Route path="/order-success" element={<OrderSuccess />} />
             <Route path="/orders" element={<OrderHistory user={currentUser} />} />
-            
+            <Route path="/favorites" element={<Favorite user={currentUser} />} /> 
             <Route path="/admin/orders" element={<Navigate to="/login" />} />
             
             <Route path="*" element={<Navigate to="/" />} />

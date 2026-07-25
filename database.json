@@ -165,7 +165,7 @@
       "author": "Nguyên Phong",
       "categoryId": "2",
       "price": 168000,
-      "stock": 90,
+      "stock": 2,
       "rating": 4.7,
       "soldCount": 150,
       "image": "/images/muon-kiep-nhan-sinh.webp",
@@ -323,7 +323,7 @@
       "author": "Grant Smith",
       "categoryId": "5",
       "price": 400000,
-      "stock": 25,
+      "stock": 5,
       "image": "/images/lap-rap-may-tinh.webp",
       "publisher": "NXB Bách Khoa",
       "pages": 310,
@@ -333,7 +333,6 @@
       "is_deleted": false,
       "id": "17"
     },
-
     {
       "id": "18",
       "title": "ABC",
@@ -347,7 +346,56 @@
       "description": "",
       "rating": 5,
       "soldCount": 0,
-      "is_deleted": false
+      "is_deleted": true
+    }
+  ],
+  "favorites": [
+    {
+      "userId": 2,
+      "bookId": 4,
+      "id": "7071"
+    },
+    {
+      "id": "56ae",
+      "userId": "bPpJTDZ_BpQ",
+      "bookId": "2",
+      "bookDetails": {
+        "id": "2",
+        "title": "Khi Hơi Thở Hóa Thinh Không",
+        "author": "Paul Kalanithi",
+        "categoryId": "1",
+        "price": 109000,
+        "stock": 85,
+        "rating": 4.9,
+        "soldCount": 450,
+        "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp",
+        "description": "Tự truyện đầy cảm động của một bác sĩ phẫu thuật thần kinh khi anh phải đối mặt với căn bệnh ung thư phổi giai đoạn cuối.",
+        "publisher": "NXB Lao Động",
+        "year": 2017,
+        "pages": 240,
+        "is_deleted": false
+      }
+    },
+    {
+      "id": "e8ff",
+      "userId": "bPpJTDZ_BpQ",
+      "bookId": "3",
+      "bookDetails": {
+        "id": "3",
+        "title": "Cảm Ơn Người Lớn",
+        "author": "Nguyễn Nhật Ánh",
+        "categoryId": "1",
+        "price": 110000,
+        "stock": 60,
+        "rating": 4.7,
+        "soldCount": 250,
+        "image": "/images/cam-on-nguoi-lon.webp",
+        "description": "Tác phẩm đưa độc giả trở lại với những nhân vật quen thuộc trong Cho Tôi Xin Một Vé Đi Tuổi Thơ, với những suy ngẫm sâu sắc hơn.",
+        "publisher": "NXB Trẻ",
+        "year": 2018,
+        "pages": 268,
+        "is_deleted": false
+      }
     }
   ],
   "reviews": [
@@ -382,7 +430,15 @@
     {
       "id": "g0CQ9qxaIuc",
       "userId": "bPpJTDZ_BpQ",
-      "items": []
+      "items": [
+        {
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 1,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
+        }
+      ]
     },
     {
       "id": "yRz17tcB7u8",
@@ -445,7 +501,7 @@
       "paymentMethod": "COD",
       "date": "2026-07-21T14:12:04.643Z",
       "status": "cancelled",
-      "id": 1
+      "id": "1"
     },
     {
       "userId": "yUGmB9aEeNw",
@@ -467,7 +523,7 @@
       "paymentMethod": "BANKING",
       "date": "2026-07-21T14:16:25.924Z",
       "status": "cancelled",
-      "id": 2
+      "id": "2"
     },
     {
       "userId": "bPpJTDZ_BpQ",
@@ -496,7 +552,7 @@
       "paymentMethod": "COD",
       "date": "2026-07-21T14:32:51.845Z",
       "status": "cancelled",
-      "id": 3
+      "id": "3"
     },
     {
       "userId": "bPpJTDZ_BpQ",
@@ -518,7 +574,7 @@
       "paymentMethod": "BANKING",
       "date": "2026-07-21T14:33:27.678Z",
       "status": "cancelled",
-      "id": 4
+      "id": "4"
     },
     {
       "userId": "bPpJTDZ_BpQ",
@@ -540,7 +596,7 @@
       "paymentMethod": "COD",
       "date": "2026-07-21T14:36:04.569Z",
       "status": "completed",
-      "id": 5
+      "id": "5"
     },
     {
       "userId": "LS1LaU9A3O0",
@@ -562,7 +618,7 @@
       "paymentMethod": "BANKING",
       "date": "2026-07-21T14:37:29.404Z",
       "status": "cancelled",
-      "id": 6
+      "id": "6"
     },
     {
       "userId": "LS1LaU9A3O0",
@@ -584,7 +640,7 @@
       "paymentMethod": "BANKING",
       "date": "2026-07-21T14:46:34.288Z",
       "status": "completed",
-      "id": 7
+      "id": "7"
     },
     {
       "userId": "LS1LaU9A3O0",
@@ -606,7 +662,7 @@
       "paymentMethod": "BANKING",
       "date": "2026-07-21T15:08:24.727Z",
       "status": "cancelled",
-      "id": 8
+      "id": "8"
     },
     {
       "userId": "LS1LaU9A3O0",
@@ -628,7 +684,7 @@
       "paymentMethod": "COD",
       "date": "2026-07-21T15:09:45.362Z",
       "status": "completed",
-      "id": 9
+      "id": "9"
     },
     {
       "userId": "bPpJTDZ_BpQ",
@@ -650,7 +706,7 @@
       "paymentMethod": "COD",
       "date": "2026-07-21T15:25:57.397Z",
       "status": "cancelled",
-      "id": 10
+      "id": "10"
     },
     {
       "userId": "bPpJTDZ_BpQ",
@@ -672,7 +728,7 @@
       "paymentMethod": "COD",
       "date": "2026-07-21T15:26:10.886Z",
       "status": "completed",
-      "id": 11
+      "id": "11"
     },
     {
       "userId": "bPpJTDZ_BpQ",
@@ -693,8 +749,66 @@
       "address": "Hà nội",
       "paymentMethod": "COD",
       "date": "2026-07-21T15:32:02.635Z",
-      "status": "accepted",
-      "id": 12
+      "status": "completed",
+      "id": "12"
+    },
+    {
+      "id": "87fb",
+      "userId": "bPpJTDZ_BpQ",
+      "items": [
+        {
+          "bookId": "18",
+          "title": "ABC",
+          "price": 80000,
+          "quantity": 2,
+          "image": "1"
+        },
+        {
+          "bookId": "7",
+          "title": "Muôn Kiếp Nhân Sinh",
+          "price": 168000,
+          "quantity": 1,
+          "image": "/images/muon-kiep-nhan-sinh.webp"
+        },
+        {
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 1,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
+        }
+      ],
+      "itemsTotal": 437000,
+      "shippingFee": 30000,
+      "totalPrice": 467000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Hà nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-22T01:43:20.671Z",
+      "status": "completed"
+    },
+    {
+      "id": "ecda",
+      "userId": "bPpJTDZ_BpQ",
+      "items": [
+        {
+          "bookId": "2",
+          "title": "Khi Hơi Thở Hóa Thinh Không",
+          "price": 109000,
+          "quantity": 1,
+          "image": "/images/khi-hoi-tho-hoa-thinh-khong.webp"
+        }
+      ],
+      "itemsTotal": 109000,
+      "shippingFee": 30000,
+      "totalPrice": 139000,
+      "fullName": "Phạm Nam Phương",
+      "phone": "0393219119",
+      "address": "Hà nội",
+      "paymentMethod": "COD",
+      "date": "2026-07-24T02:45:05.974Z",
+      "status": "completed"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

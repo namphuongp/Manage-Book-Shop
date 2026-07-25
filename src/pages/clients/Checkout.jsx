@@ -93,9 +93,7 @@ function Checkout({ user, fetchCartCount }) {
             <h2 className="fw-bold mb-4">Hoàn tất đơn hàng</h2>
             <Form onSubmit={handleCheckout} noValidate>
                 <Row className="g-4">
-                    {/* Cột trái: Thông tin giao hàng & Thanh toán */}
                     <Col lg={7}>
-                        {/* Box 1: Thông tin giao hàng */}
                         <Card className="p-4 shadow-sm border-0 mb-4" style={{ borderRadius: '12px' }}>
                             <h5 className="fw-bold mb-4 pb-2 border-bottom">
                                 <i className="bi bi-geo-alt me-2 text-danger"></i>Thông tin giao hàng
@@ -140,7 +138,6 @@ function Checkout({ user, fetchCartCount }) {
                             </Form.Group>
                         </Card>
 
-                        {/* Box 2: Phương thức thanh toán */}
                         <Card className="p-4 shadow-sm border-0" style={{ borderRadius: '12px' }}>
                             <h5 className="fw-bold mb-4 pb-2 border-bottom">Phương thức thanh toán
                             </h5>
@@ -180,7 +177,6 @@ function Checkout({ user, fetchCartCount }) {
                         </Card>
                     </Col>
 
-                    {/* Cột phải: Tóm tắt đơn hàng */}
                     <Col lg={5}>
                         <Card className="p-4 shadow-sm border-0" style={{ borderRadius: '12px', position: 'sticky', top: '20px' }}>
                             <h5 className="fw-bold mb-4 pb-2 border-bottom">

@@ -270,10 +270,10 @@ function BookDetail({ user, fetchCartCount }) {
                             </Col>
                         </Row>
                         <h3 className="text-danger fw-bold display-6 mb-4">{book.price.toLocaleString()} đ</h3>
-                        <Button variant='outline-danger' size="lg" className="px-5 fw-bold" disabled={book.stock === 0} onClick={handleAddToCart}>
+                        <Button variant='outline-danger' size="lg" className="px-5 fw-bold" disabled={book.stock === 0 || book.is_deleted} onClick={handleAddToCart}>
                             THÊM VÀO GIỎ HÀNG
                         </Button>
-                        <Button variant='danger' size="lg" className="px-5 fw-bold ms-3" disabled={book.stock === 0} onClick={handleBuyNow} style={{ border: 'none' }}>
+                        <Button variant='danger' size="lg" className="px-5 fw-bold ms-3" disabled={book.stock === 0 || book.is_deleted} onClick={handleBuyNow} style={{ border: 'none' }}>
                             Mua ngay
                         </Button>
                     </Col>

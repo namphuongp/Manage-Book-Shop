@@ -21,10 +21,10 @@ function NavbarComponent({ user, onLogout, cartCount }) {
                       bg="danger"
                       className="position-absolute"
                       style={{
-                        top: '2px',      
-                        right: '2px',    
-                        fontSize: '0.65rem', 
-                        padding: '0.35em 0.5em' 
+                        top: '2px',
+                        right: '2px',
+                        fontSize: '0.65rem',
+                        padding: '0.35em 0.5em'
                       }}
                     >
                       {cartCount}
@@ -45,6 +45,9 @@ function NavbarComponent({ user, onLogout, cartCount }) {
                     </NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/orders">
                       <i className="bi bi-list-check me-2"></i> Lịch sử đặt hàng
+                    </NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/favorites">
+                      <i className="bi bi-box-arrow-right me-2"></i> Danh sách yêu thích
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item onClick={onLogout} className="text-danger">

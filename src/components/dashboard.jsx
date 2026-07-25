@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
 
-function AdminDashboard() {
+function Dashboard() {
     const [stats, setStats] = useState({
         totalRevenue: 0,
         totalOrders: 0,
@@ -129,4 +129,4 @@ function AdminDashboard() {
     );
 }
 
-export default AdminDashboard;
+export default Dashboard;
