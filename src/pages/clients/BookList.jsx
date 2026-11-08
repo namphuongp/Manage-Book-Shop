@@ -97,7 +97,7 @@ function BookList({ user, fetchCartCount }) {
     return (
         <Container className="my-4">
             <h3 className="fw-bold mb-3">
-                <i className="bi bi-fire text-danger me-2"></i>Sách Bán Chạy Nhất
+                <i className="bi bi-fire text-danger-emphasis me-2"></i>Sách Bán Chạy Nhất
             </h3>
             <Row className="mb-5">
                 {bestSellers.map(book => (
@@ -123,7 +123,7 @@ function BookList({ user, fetchCartCount }) {
                             <Card.Body className="text-center pt-0">
                                 <p className="small text-muted mb-1">{book.author}</p>
                                 <h6 className="text-truncate fw-bold">{book.title}</h6>
-                                <p className="fw-bold text-danger fs-5 mb-1">{book.price.toLocaleString()}đ</p>
+                                <p className="fw-bold text-danger-emphasis fs-5 mb-1">{book.price.toLocaleString()}đ</p>
 
                             </Card.Body>
                         </Card>
@@ -132,7 +132,7 @@ function BookList({ user, fetchCartCount }) {
             </Row>
 
             {/* filter */}
-            <Card className="border-0 shadow-sm mb-5" style={{ borderRadius: '15px', backgroundColor: '#ffffff' }}>
+            <Card className="border-0 shadow-sm mb-5" style={{ borderRadius: '15px', backgroundColor: 'var(--bs-body-bg)' }}>
                 <Card.Body className="p-4">
                     <Row className="g-4 align-items-end">
                         <Col lg={4} md={6}>
@@ -143,7 +143,7 @@ function BookList({ user, fetchCartCount }) {
                                     value={search}
                                     onChange={(e) => setSearch(e.target.value)}
                                     style={{ paddingLeft: '40px', borderRadius: '10px', height: '45px' }}
-                                    className="border-light-subtle bg-light"
+                                    className="border-light-subtle bg-body-tertiary"
                                 />
                             </div>
                         </Col>
@@ -153,7 +153,7 @@ function BookList({ user, fetchCartCount }) {
                                 value={selectedCategory}
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                                 style={{ borderRadius: '10px', height: '45px' }}
-                                className="border-light-subtle bg-light text-secondary"
+                                className="border-light-subtle bg-body-tertiary text-body-secondary"
                             >
                                 <option value="All">Tất cả danh mục</option>
                                 {categories.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
@@ -185,7 +185,7 @@ function BookList({ user, fetchCartCount }) {
                                         cursor: 'pointer'
                                     }}
                                 >
-                                    <div style={{ overflow: 'hidden', height: '260px', backgroundColor: '#f9f9f9', padding: '20px' }}>
+                                    <div style={{ overflow: 'hidden', height: '260px', backgroundColor: 'var(--bs-tertiary-bg)', padding: '20px' }}>
                                         <Card.Img
                                             variant="top"
                                             src={book.image}
@@ -210,11 +210,11 @@ function BookList({ user, fetchCartCount }) {
                                     <Card.Body className="text-center d-flex flex-column justify-content-between">
 
                                         <div>
-                                            <h6 className="fw-bold mb-2 text-truncate" style={{ color: '#2c3e50' }}>{book.title}</h6>
+                                            <h6 className="fw-bold mb-2 text-truncate" style={{ color: 'var(--bs-body-color)' }}>{book.title}</h6>
                                             <p className="small text-muted mb-3">{book.author}</p>
                                         </div>
                                         <div>
-                                            <h5 className="text-danger fw-bold mb-2">{book.price.toLocaleString()}đ</h5>
+                                            <h5 className="text-danger-emphasis fw-bold mb-2">{book.price.toLocaleString()}đ</h5>
                                             <div>
                                                 {book.stock === 0 ? (
                                                     <p>Hết hàng</p>

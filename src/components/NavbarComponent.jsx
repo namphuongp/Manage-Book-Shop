@@ -1,13 +1,17 @@
 import React from 'react';
-import { Navbar, Container, Nav, Button, Badge, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, Badge, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
-function NavbarComponent({ user, onLogout, cartCount }) {
+function NavbarComponent({ user, onLogout, cartCount, theme, onToggleTheme }) {
   return (
-    <Navbar bg="light" expand="lg" className="shadow-sm " fixed="top">
+    <Navbar bg="body-tertiary" expand="lg" className="shadow-sm " fixed="top">
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" className="fw-bold text-success">Nova Library</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Brand as={Link} to="/" className="fw-bold text-success-emphasis">Nova Library</Navbar.Brand>
+        <div className="d-flex align-items-center gap-2 ms-auto order-lg-last">
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} className="ms-lg-3" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
             {user ? (
@@ -50,7 +54,7 @@ function NavbarComponent({ user, onLogout, cartCount }) {
                       <i className="bi bi-box-arrow-right me-2"></i> Danh sách yêu thích
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item onClick={onLogout} className="text-danger">
+                    <NavDropdown.Item onClick={onLogout} className="text-danger-emphasis">
                       <i className="bi bi-box-arrow-right me-2"></i> Đăng xuất
                     </NavDropdown.Item>
                   </NavDropdown>

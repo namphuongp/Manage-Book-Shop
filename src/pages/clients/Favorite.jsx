@@ -30,15 +30,12 @@ const Favorites = ({ user }) => {
         fetchFavorites();
     }, [user]);
 
-    // SỬA LỖI 1 & 2: Dùng đúng favId và URL API
     const handleRemoveFavorite = async (e, favId) => {
         e.stopPropagation();
 
         try {
-            // Đổi từ /api/favorites/... thành ${API_URL}/favorites/...
             await axios.delete(`${API_URL}/favorites/${favId}`);
             
-            // Lọc theo fav.id để xóa đúng phần tử khỏi State
             setFavoriteBooks(prevBooks => prevBooks.filter(fav => fav.id !== favId));
         } catch (error) {
             console.error("Lỗi khi xóa khỏi yêu thích:", error);
@@ -46,7 +43,6 @@ const Favorites = ({ user }) => {
         }
     };
 
-    // SỬA LỖI 3: Hiển thị loading khi đang tải dữ liệu
     if (loading) {
         return (
             <Container className="text-center py-5">
@@ -68,7 +64,7 @@ const Favorites = ({ user }) => {
 
     return (
         <Container className="py-4">
-            <h3 className="mb-4 fw-bold" style={{ color: '#2c3e50' }}>
+            <h3 className="mb-4 fw-bold" style={{ color: 'var(--bs-body-color)' }}>
                 Sách Yêu Thích Của Bạn
             </h3>
 
@@ -81,7 +77,7 @@ const Favorites = ({ user }) => {
                                 style={{ cursor: 'pointer', borderRadius: '15px', overflow: 'hidden' }}
                                 onClick={() => navigate(`/book/${fav.bookId}`)}
                             >
-                                <div style={{ overflow: 'hidden', height: '260px', backgroundColor: '#f9f9f9', padding: '20px' }}>
+                                <div style={{ overflow: 'hidden', height: '260px', backgroundColor: 'var(--bs-tertiary-bg)', padding: '20px' }}>
                                     <Card.Img
                                         variant="top"
                                         src={fav.bookDetails?.image}
@@ -90,13 +86,13 @@ const Favorites = ({ user }) => {
                                     />
                                 </div>
                                 <Card.Body className="d-flex flex-column text-center">
-                                    <h6 className="fw-bold mb-2 text-truncate" style={{ color: '#2c3e50' }}>
+                                    <h6 className="fw-bold mb-2 text-truncate" style={{ color: 'var(--bs-body-color)' }}>
                                         {fav.bookDetails?.title}
                                     </h6>
                                     <p className="small text-muted mb-3 text-truncate">
                                         {fav.bookDetails?.author}
                                     </p>
-                                    <h5 className="text-danger fw-bold mb-3 mt-auto">
+                                    <h5 className="text-danger-emphasis fw-bold mb-3 mt-auto">
                                         {fav.bookDetails?.price?.toLocaleString()}đ
                                     </h5>
 

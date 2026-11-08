@@ -83,7 +83,7 @@ function OrderHistory({ user }) {
             ) : (
                 orders.map((order) => (
                     <Card key={order.id} className="mb-4 shadow-sm border-0" style={{ borderRadius: '12px', overflow: 'hidden' }}>
-                        <Card.Header className="bg-light d-flex flex-wrap justify-content-between align-items-center py-3 border-bottom-0">
+                        <Card.Header className="bg-body-tertiary d-flex flex-wrap justify-content-between align-items-center py-3 border-bottom-0">
                             <div className="mb-2 mb-md-0">
                                 <span className="fw-bold me-3">Mã đơn: #{order.id}</span>
                                 <span className="text-muted">
@@ -129,14 +129,14 @@ function OrderHistory({ user }) {
                             </Table>
                         </Card.Body>
 
-                        <Card.Footer className="bg-white border-top py-3 px-4 d-flex flex-wrap justify-content-between align-items-center">
+                        <Card.Footer className="bg-body border-top py-3 px-4 d-flex flex-wrap justify-content-between align-items-center">
                             <div className="text-muted small mb-2 mb-md-0">
                                 <i className="bi bi-credit-card me-1"></i>
-                                Phương thức thanh toán: <strong className="text-dark">{order.paymentMethod === 'BANKING' ? 'Chuyển khoản' : 'Thanh toán khi nhận hàng (COD)'}</strong>
+                                Phương thức thanh toán: <strong className="text-body">{order.paymentMethod === 'BANKING' ? 'Chuyển khoản' : 'Thanh toán khi nhận hàng (COD)'}</strong>
                             </div>
                             <div className="text-end">
                                 <span className="text-muted me-2">Tổng số tiền:</span>
-                                <span className="fs-5 fw-bold text-danger">{order.totalPrice.toLocaleString()}đ</span>
+                                <span className="fs-5 fw-bold text-danger-emphasis">{order.totalPrice.toLocaleString()}đ</span>
                             </div>
                         </Card.Footer>
                     </Card>

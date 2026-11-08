@@ -136,7 +136,7 @@ function Cart({ user, fetchCartCount }) {
                         <Card className="border-0 shadow-sm" style={{ borderRadius: '15px', overflow: 'hidden' }}>
                             <div className="table-responsive">
                                 <Table hover className="mb-0 text-center align-middle" style={{ minWidth: '600px' }}>
-                                    <thead className="bg-light">
+                                    <thead className="bg-body-tertiary">
                                         <tr>
                                             <th className="py-3 text-start ps-4">Sản phẩm</th>
                                             <th className="py-3">Đơn giá</th>
@@ -151,32 +151,32 @@ function Cart({ user, fetchCartCount }) {
                                                 <td className="text-start ps-4" style={{ width: '40%' }}>
                                                     <div className="d-flex align-items-center">
                                                         <img src={item.image} alt={item.title} style={{ width: '60px', height: '80px', objectFit: 'cover', borderRadius: '5px', marginRight: '15px' }} />
-                                                        <Link to={`/book/${item.bookId}`} className="text-decoration-none text-dark fw-bold">
+                                                        <Link to={`/book/${item.bookId}`} className="text-decoration-none text-body fw-bold">
                                                             <span className="text-truncate d-inline-block" style={{ maxWidth: '180px' }}>{item.title}</span>
                                                         </Link>
                                                     </div>
                                                 </td>
                                                 <td>{(item.price).toLocaleString()}đ</td>
                                                 <td>
-                                                    <ButtonGroup size="sm" className="bg-white shadow-sm">
+                                                    <ButtonGroup size="sm" className="bg-body shadow-sm">
                                                         <Button
-                                                            variant="light"
+                                                            variant="outline-secondary"
                                                             className="border"
                                                             disabled={isUpdating}
                                                             onClick={() => handleUpdateQuantity(item.bookId, item.quantity - 1)}
                                                         > - </Button>
-                                                        <Button variant="light" className="border fw-bold px-3" disabled style={{ color: '#000', opacity: 1 }}>
+                                                        <Button variant="outline-secondary" className="border fw-bold px-3" disabled style={{ color: 'var(--bs-body-color)', opacity: 1 }}>
                                                             {item.quantity}
                                                         </Button>
                                                         <Button
-                                                            variant="light"
+                                                            variant="outline-secondary"
                                                             className="border"
                                                             disabled={isUpdating}
                                                             onClick={() => handleUpdateQuantity(item.bookId, item.quantity + 1)}
                                                         > + </Button>
                                                     </ButtonGroup>
                                                 </td>
-                                                <td className="text-danger fw-bold">{(item.price * item.quantity).toLocaleString()}đ</td>
+                                                <td className="text-danger-emphasis fw-bold">{(item.price * item.quantity).toLocaleString()}đ</td>
                                                 <td>
                                                     <Button
                                                         variant="outline-danger"
@@ -203,7 +203,7 @@ function Cart({ user, fetchCartCount }) {
                     </Col>
 
                     <Col lg={4}>
-                        <Card className="border-0 shadow-sm p-4" style={{ borderRadius: '15px', backgroundColor: '#f9f9f9' }}>
+                        <Card className="border-0 shadow-sm p-4" style={{ borderRadius: '15px', backgroundColor: 'var(--bs-tertiary-bg)' }}>
                             <h4 className="fw-bold mb-4 pb-3 border-bottom">Tổng thanh toán</h4>
 
                             <div className="d-flex justify-content-between mb-3 text-muted">
@@ -217,7 +217,7 @@ function Cart({ user, fetchCartCount }) {
 
                             <div className="d-flex justify-content-between mb-4 mt-2">
                                 <span className="fs-5 fw-bold">Tổng cộng:</span>
-                                <span className="fs-4 fw-bold text-danger">{finalTotal.toLocaleString()}đ</span>
+                                <span className="fs-4 fw-bold text-danger-emphasis">{finalTotal.toLocaleString()}đ</span>
                             </div>
 
                             <Button

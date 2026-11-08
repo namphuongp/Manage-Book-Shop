@@ -198,7 +198,7 @@ function AdminProducts() {
 
             <Card className="border-0 shadow-sm" style={{ borderRadius: '12px', overflow: 'hidden' }}>
                 <Table hover responsive className="mb-0 align-middle">
-                    <thead className="bg-light">
+                    <thead className="bg-body-tertiary">
                         <tr>
                             <th className="py-3">ID</th>
                             <th className="py-3 ps-4">Ảnh</th>
@@ -212,8 +212,8 @@ function AdminProducts() {
                                 title="Click để sắp xếp theo giá"
                             >
                                 Giá bán{' '}
-                                {sortOrder === 'asc' && <i className="bi bi-arrow-up text-success fw-bold"></i>}
-                                {sortOrder === 'desc' && <i className="bi bi-arrow-down text-success fw-bold"></i>}
+                                {sortOrder === 'asc' && <i className="bi bi-arrow-up text-success-emphasis fw-bold"></i>}
+                                {sortOrder === 'desc' && <i className="bi bi-arrow-down text-success-emphasis fw-bold"></i>}
                                 {sortOrder === 'default' && <i className="bi bi-arrow-down-up text-muted small"></i>}
                             </th>
                             <th className="py-3">Tồn kho</th>
@@ -237,7 +237,7 @@ function AdminProducts() {
                                     </td>
                                     <td>{book.author}</td>
                                     <td>{getCategoryName(book.categoryId)}</td>
-                                    <td className="text-danger fw-bold">{book.price.toLocaleString()}đ</td>
+                                    <td className="text-danger-emphasis fw-bold">{book.price.toLocaleString()}đ</td>
                                     <td>{book.stock}</td>
                                     <td className="text-center">
                                         <Button size="sm" variant="outline-primary" className="me-2" onClick={() => handleShowEditModal(book)} title="Sửa">
@@ -264,19 +264,19 @@ function AdminProducts() {
                         <Row className="g-3">
                             <Col md={6}>
                                 <Form.Group>
-                                    <Form.Label className="fw-semibold">Tên sách <span className="text-danger">*</span></Form.Label>
+                                    <Form.Label className="fw-semibold">Tên sách <span className="text-danger-emphasis">*</span></Form.Label>
                                     <Form.Control type="text" name="title" value={formData.title} onChange={handleChange} required placeholder="Nhập tên sách" />
                                 </Form.Group>
                             </Col>
                             <Col md={6}>
                                 <Form.Group>
-                                    <Form.Label className="fw-semibold">Tác giả <span className="text-danger">*</span></Form.Label>
+                                    <Form.Label className="fw-semibold">Tác giả <span className="text-danger-emphasis">*</span></Form.Label>
                                     <Form.Control type="text" name="author" value={formData.author} onChange={handleChange} required placeholder="Nhập tên tác giả" />
                                 </Form.Group>
                             </Col>
                             <Col md={6}>
                                 <Form.Group>
-                                    <Form.Label className="fw-semibold">Danh mục <span className="text-danger">*</span></Form.Label>
+                                    <Form.Label className="fw-semibold">Danh mục <span className="text-danger-emphasis">*</span></Form.Label>
                                     <Form.Select name="categoryId" value={formData.categoryId} onChange={handleChange}>
                                         {categories.map(cat => (
                                             <option key={cat.id} value={cat.id}>{cat.name}</option>
@@ -286,13 +286,13 @@ function AdminProducts() {
                             </Col>
                             <Col md={6}>
                                 <Form.Group>
-                                    <Form.Label className="fw-semibold">Giá bán (đ) <span className="text-danger">*</span></Form.Label>
+                                    <Form.Label className="fw-semibold">Giá bán (đ) <span className="text-danger-emphasis">*</span></Form.Label>
                                     <Form.Control type="number" min="0" name="price" value={formData.price} onChange={handleChange} required placeholder="Ví dụ: 89000" />
                                 </Form.Group>
                             </Col>
                             <Col md={6}>
                                 <Form.Group>
-                                    <Form.Label className="fw-semibold">Số lượng tồn kho <span className="text-danger">*</span></Form.Label>
+                                    <Form.Label className="fw-semibold">Số lượng tồn kho <span className="text-danger-emphasis">*</span></Form.Label>
                                     <Form.Control type="number" min="0" name="stock" value={formData.stock} onChange={handleChange} required placeholder="Ví dụ: 100" />
                                 </Form.Group>
                             </Col>
@@ -304,7 +304,7 @@ function AdminProducts() {
                             </Col>
                             <Col md={12}>
                                 <Form.Group>
-                                    <Form.Label className="fw-semibold">Đường dẫn ảnh (URL) <span className="text-danger">*</span></Form.Label>
+                                    <Form.Label className="fw-semibold">Đường dẫn ảnh (URL) <span className="text-danger-emphasis">*</span></Form.Label>
                                     <Form.Control type="text" name="image" value={formData.image} onChange={handleChange} required placeholder="Ví dụ: /images/nha-gia-kim.webp" />
                                 </Form.Group>
                             </Col>

@@ -8,7 +8,7 @@ function OrderSuccess() {
     return (
         <Container className="my-5 text-center py-5">
             <Card className="border-0 shadow-sm p-5 mx-auto" style={{ maxWidth: '600px', borderRadius: '15px' }}>
-                <i className="bi bi-check-circle-fill text-success mb-3" style={{ fontSize: '5rem' }}></i>
+                <i className="bi bi-check-circle-fill text-success-emphasis mb-3" style={{ fontSize: '5rem' }}></i>
                 <h2 className="fw-bold mb-3">Đặt hàng thành công!</h2>
                 <p className="text-muted fs-5 mb-4">
                     Cảm ơn bạn đã tin tưởng và mua sắm tại cửa hàng của chúng tôi. Đơn hàng của bạn đã được ghi nhận và đang chờ xử lý.

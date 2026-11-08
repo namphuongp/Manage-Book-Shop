@@ -249,7 +249,7 @@ function BookDetail({ user, fetchCartCount }) {
             <Card className="border-0 shadow-sm p-4 mb-5" style={{ borderRadius: '15px' }}>
                 <Row>
                     <Col md={4} className="text-center mb-4 mb-md-0">
-                        <div style={{ padding: '20px', border: '1px solid #eee', borderRadius: '10px' }}>
+                        <div style={{ padding: '20px', border: '1px solid var(--bs-border-color)', borderRadius: '10px' }}>
                             <img src={book.image} alt={book.title} style={{ width: '100%', maxHeight: '400px', objectFit: 'contain' }} />
                         </div>
                     </Col>
@@ -269,7 +269,7 @@ function BookDetail({ user, fetchCartCount }) {
                                 <p className="mb-1">Tình trạng: {book.stock > 0 ? <Badge bg="success">Còn hàng</Badge> : <Badge bg="danger">Hết hàng</Badge>}</p>
                             </Col>
                         </Row>
-                        <h3 className="text-danger fw-bold display-6 mb-4">{book.price.toLocaleString()} đ</h3>
+                        <h3 className="text-danger-emphasis fw-bold display-6 mb-4">{book.price.toLocaleString()} đ</h3>
                         <Button variant='outline-danger' size="lg" className="px-5 fw-bold" disabled={book.stock === 0 || book.is_deleted} onClick={handleAddToCart}>
                             THÊM VÀO GIỎ HÀNG
                         </Button>
@@ -296,9 +296,9 @@ function BookDetail({ user, fetchCartCount }) {
                     </Col>
                     <Col md={5} className="px-4 border-end-md mb-4 mb-md-0">
                         {[5, 4, 3, 2, 1].map(star => (
-                            <div key={star} className="d-flex align-items-center mb-2" style={{ fontSize: '0.9rem', color: '#666' }}>
+                            <div key={star} className="d-flex align-items-center mb-2" style={{ fontSize: '0.9rem', color: 'var(--bs-secondary-color)' }}>
                                 <span className="me-2 text-nowrap" style={{ width: '40px' }}>{star} sao</span>
-                                <div className="progress flex-grow-1 mx-2" style={{ height: '8px', backgroundColor: '#f5f5f5' }}>
+                                <div className="progress flex-grow-1 mx-2" style={{ height: '8px', backgroundColor: 'var(--bs-tertiary-bg)' }}>
                                     <div
                                         className="progress-bar"
                                         role="progressbar"
@@ -340,14 +340,14 @@ function BookDetail({ user, fetchCartCount }) {
                                 {"★".repeat(review.rating)}
                                 {"☆".repeat(5 - review.rating)}
                             </div>
-                            <p className="mb-0 text-dark">{review.comment}</p>
+                            <p className="mb-0 text-body">{review.comment}</p>
                         </div>
                     ))
                 )}
             </div>
 
             {showReviewForm && user && (
-                <Card className="border-0 bg-light p-4 mb-4" style={{ borderRadius: '10px' }}>
+                <Card className="border-0 bg-body-tertiary p-4 mb-4" style={{ borderRadius: '10px' }}>
                     <h5 className="mb-3">Gửi nhận xét của bạn</h5>
                     <Form onSubmit={handleReviewSubmit}>
                         <Form.Group className="mb-3" style={{ maxWidth: '200px' }}>
@@ -374,7 +374,7 @@ function BookDetail({ user, fetchCartCount }) {
             <Offcanvas show={showCart} onHide={() => setShowCart(false)} placement="end">
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title className="fw-bold">
-                        <i className="bi bi-cart-check-fill text-success me-2"></i>
+                        <i className="bi bi-cart-check-fill text-success-emphasis me-2"></i>
                         GIỎ HÀNG CỦA BẠN
                     </Offcanvas.Title>
                 </Offcanvas.Header>
@@ -401,7 +401,7 @@ function BookDetail({ user, fetchCartCount }) {
                                             >
                                                 -
                                             </Button>
-                                            <Button variant="outline-secondary" disabled style={{ width: '40px', color: '#000', opacity: 1, backgroundColor: '#f8f9fa' }}>
+                                            <Button variant="outline-secondary" disabled style={{ width: '40px', color: 'var(--bs-body-color)', opacity: 1, backgroundColor: 'var(--bs-tertiary-bg)' }}>
                                                 {item.quantity}
                                             </Button>
                                             <Button
@@ -414,7 +414,7 @@ function BookDetail({ user, fetchCartCount }) {
                                         </ButtonGroup>
 
                                         {/* Thành tiền của từng sản phẩm */}
-                                        <div className="text-danger fw-bold" style={{ fontSize: '1.05rem' }}>
+                                        <div className="text-danger-emphasis fw-bold" style={{ fontSize: '1.05rem' }}>
                                             {(item.price * item.quantity).toLocaleString()}đ
                                         </div>
                                     </div>
@@ -427,7 +427,7 @@ function BookDetail({ user, fetchCartCount }) {
                         <div className="mt-3 pt-3">
                             <div className="d-flex justify-content-between fw-bold mb-3 fs-5">
                                 <span>Tổng cộng:</span>
-                                <span className="text-danger">{cartTotalPrice.toLocaleString()}đ</span>
+                                <span className="text-danger-emphasis">{cartTotalPrice.toLocaleString()}đ</span>
                             </div>
                             <Button variant="danger" className="w-100 py-2 fw-bold" onClick={() => navigate('/cart')}>
                                 XEM CHI TIẾT GIỎ HÀNG

@@ -22,7 +22,7 @@ function AdminOrders({ user }) {
     if (!user || user.role !== 'admin') {
         return (
             <Container className="text-center my-5 py-5">
-                <i className="bi bi-shield-lock text-danger" style={{ fontSize: '4rem' }}></i>
+                <i className="bi bi-shield-lock text-danger-emphasis" style={{ fontSize: '4rem' }}></i>
                 <h3 className="mt-3">Truy cập bị từ chối</h3>
                 <p className="text-muted">Bạn không có quyền truy cập vào trang quản trị viên này.</p>
                 <Button variant="success" onClick={() => navigate('/')} style={{ backgroundColor: '#7fad39', border: 'none' }}>
@@ -117,7 +117,7 @@ function AdminOrders({ user }) {
             ) : (
                 filteredOrders.map((order) => (
                     <Card key={order.id} className="mb-4 shadow-sm border-0" style={{ borderRadius: '12px', overflow: 'hidden' }}>
-                        <Card.Header className="bg-light d-flex flex-wrap justify-content-between align-items-center py-3 border-bottom-0">
+                        <Card.Header className="bg-body-tertiary d-flex flex-wrap justify-content-between align-items-center py-3 border-bottom-0">
                             <div>
                                 <span className="fw-bold me-3">Mã đơn: #{order.id}</span>
                                 <span className="text-muted me-3">
@@ -158,7 +158,7 @@ function AdminOrders({ user }) {
                         </Card.Header>
 
                         <Card.Body className="p-0">
-                            <div className="p-3 bg-white border-bottom small text-muted d-flex justify-content-between align-items-center">
+                            <div className="p-3 bg-body border-bottom small text-muted d-flex justify-content-between align-items-center">
                                 <div>
                                     <strong>Người nhận:</strong> {order.fullName} | <strong>SĐT:</strong> {order.phone} | <strong>Địa chỉ:</strong> {order.address}
                                 </div>
@@ -186,14 +186,14 @@ function AdminOrders({ user }) {
                             </Table>
                         </Card.Body>
 
-                        <Card.Footer className="bg-white border-top py-3 px-4 d-flex flex-wrap justify-content-between align-items-center">
+                        <Card.Footer className="bg-body border-top py-3 px-4 d-flex flex-wrap justify-content-between align-items-center">
                             <div className="text-muted small">
                                 <i className="bi bi-credit-card me-1"></i>
-                                Thanh toán: <strong className="text-dark">{order.paymentMethod === 'BANKING' ? 'Chuyển khoản' : 'COD'}</strong>
+                                Thanh toán: <strong className="text-body">{order.paymentMethod === 'BANKING' ? 'Chuyển khoản' : 'COD'}</strong>
                             </div>
                             <div className="text-end">
                                 <span className="text-muted me-2">Tổng tiền (gồm ship):</span>
-                                <span className="fs-5 fw-bold text-danger">{order.totalPrice.toLocaleString()}đ</span>
+                                <span className="fs-5 fw-bold text-danger-emphasis">{order.totalPrice.toLocaleString()}đ</span>
                             </div>
                         </Card.Footer>
                     </Card>

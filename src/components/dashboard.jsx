@@ -83,13 +83,13 @@ function Dashboard() {
                 <Col md={3}>
                     <Card className="border-0 shadow-sm p-3" style={{ borderRadius: '12px', borderLeft: '5px solid #28a745' }}>
                         <div className="text-muted small">Tổng doanh thu</div>
-                        <h3 className="fw-bold text-success mt-2 mb-0">{stats.totalRevenue.toLocaleString()}đ</h3>
+                        <h3 className="fw-bold text-success-emphasis mt-2 mb-0">{stats.totalRevenue.toLocaleString()}đ</h3>
                     </Card>
                 </Col>
                 <Col md={3}>
                     <Card className="border-0 shadow-sm p-3" style={{ borderRadius: '12px', borderLeft: '5px solid #007bff' }}>
                         <div className="text-muted small">Tổng đơn hàng</div>
-                        <h3 className="fw-bold text-primary mt-2 mb-0">{stats.totalOrders}</h3>
+                        <h3 className="fw-bold text-primary-emphasis mt-2 mb-0">{stats.totalOrders}</h3>
                     </Card>
                 </Col>
                 <Col md={3}>
@@ -101,7 +101,7 @@ function Dashboard() {
                 <Col md={3}>
                     <Card className="border-0 shadow-sm p-3" style={{ borderRadius: '12px', borderLeft: '5px solid #17a2b8' }}>
                         <div className="text-muted small">Tổng người dùng</div>
-                        <h3 className="fw-bold text-info mt-2 mb-0">{stats.totalUsers}</h3>
+                        <h3 className="fw-bold text-info-emphasis mt-2 mb-0">{stats.totalUsers}</h3>
                     </Card>
                 </Col>
             </Row>
@@ -115,10 +115,13 @@ function Dashboard() {
                     <div style={{ width: '100%', height: 380 }}>
                         <ResponsiveContainer>
                             <LineChart data={chartData} margin={{ top: 10, right: 30, left: 20, bottom: 10 }}>
-                                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                                <XAxis dataKey="date" />
-                                <YAxis tickFormatter={(value) => `${(value / 1000).toLocaleString()}k`} />
-                                <Tooltip formatter={(value) => [`${value.toLocaleString()}đ`, 'Doanh thu']} />
+                                <CartesianGrid strokeDasharray="3 3" stroke="var(--bs-border-color)" />
+                                <XAxis dataKey="date" stroke="var(--bs-secondary-color)" />
+                                <YAxis stroke="var(--bs-secondary-color)" tickFormatter={(value) => `${(value / 1000).toLocaleString()}k`} />
+                                <Tooltip
+                                    contentStyle={{ backgroundColor: 'var(--bs-body-bg)', borderColor: 'var(--bs-border-color)', color: 'var(--bs-body-color)' }}
+                                    formatter={(value) => [`${value.toLocaleString()}đ`, 'Doanh thu']}
+                                />
                                 <Line type="monotone" dataKey="revenue" stroke="#7fad39" strokeWidth={3} activeDot={{ r: 8 }} />
                             </LineChart>
                         </ResponsiveContainer>

@@ -96,11 +96,11 @@ function Checkout({ user, fetchCartCount }) {
                     <Col lg={7}>
                         <Card className="p-4 shadow-sm border-0 mb-4" style={{ borderRadius: '12px' }}>
                             <h5 className="fw-bold mb-4 pb-2 border-bottom">
-                                <i className="bi bi-geo-alt me-2 text-danger"></i>Thông tin giao hàng
+                                <i className="bi bi-geo-alt me-2 text-danger-emphasis"></i>Thông tin giao hàng
                             </h5>
 
                             <Form.Group className="mb-3">
-                                <Form.Label className="fw-semibold">Họ tên người nhận <span className="text-danger">*</span></Form.Label>
+                                <Form.Label className="fw-semibold">Họ tên người nhận <span className="text-danger-emphasis">*</span></Form.Label>
                                 <Form.Control
                                     name="fullName"
                                     value={formData.fullName}
@@ -112,7 +112,7 @@ function Checkout({ user, fetchCartCount }) {
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label className="fw-semibold">Số điện thoại <span className="text-danger">*</span></Form.Label>
+                                <Form.Label className="fw-semibold">Số điện thoại <span className="text-danger-emphasis">*</span></Form.Label>
                                 <Form.Control
                                     name="phone"
                                     value={formData.phone}
@@ -124,7 +124,7 @@ function Checkout({ user, fetchCartCount }) {
                             </Form.Group>
 
                             <Form.Group className="mb-3">
-                                <Form.Label className="fw-semibold">Địa chỉ nhận hàng <span className="text-danger">*</span></Form.Label>
+                                <Form.Label className="fw-semibold">Địa chỉ nhận hàng <span className="text-danger-emphasis">*</span></Form.Label>
                                 <Form.Control
                                     as="textarea"
                                     rows={3}
@@ -142,7 +142,7 @@ function Checkout({ user, fetchCartCount }) {
                             <h5 className="fw-bold mb-4 pb-2 border-bottom">Phương thức thanh toán
                             </h5>
 
-                            <div className="p-3 border rounded mb-3 bg-light">
+                            <div className="p-3 border rounded mb-3 bg-body-tertiary">
                                 <Form.Check
                                     type="radio"
                                     id="payment-cod"
@@ -195,7 +195,7 @@ function Checkout({ user, fetchCartCount }) {
                                                 <span className="text-muted small">SL: {i.quantity} x {i.price.toLocaleString()}đ</span>
                                             </div>
                                         </div>
-                                        <span className="fw-bold text-dark" style={{ fontSize: '0.95rem' }}>
+                                        <span className="fw-bold text-body" style={{ fontSize: '0.95rem' }}>
                                             {(i.price * i.quantity).toLocaleString()}đ
                                         </span>
                                     </ListGroup.Item>
@@ -213,7 +213,7 @@ function Checkout({ user, fetchCartCount }) {
 
                             <div className="d-flex justify-content-between align-items-center mb-4">
                                 <span className="fs-5 fw-bold">Tổng cộng:</span>
-                                <span className="fs-3 fw-bold text-danger">{finalTotal.toLocaleString()}đ</span>
+                                <span className="fs-3 fw-bold text-danger-emphasis">{finalTotal.toLocaleString()}đ</span>
                             </div>
 
                             <Button

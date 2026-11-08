@@ -16,7 +16,9 @@ import AdminLayout from './components/AdminLayout';
 import AdminOrders from './pages/admin/AdminOrders';
 import AdminProducts from './pages/admin/AdminProducts';
 import Dashboard from './components/dashboard'
+import useTheme from './hooks/useTheme';
 function App() {
+  const { theme, toggleTheme } = useTheme();
   const [currentUser, setCurrentUser] = useState(null);
   const [cartCount, setCartCount] = useState(0);
 
@@ -52,7 +54,7 @@ function App() {
     <Router>
       <Routes>
         {currentUser?.role === 'admin' ? (
-          <Route element={<AdminLayout user={currentUser} onLogout={handleLogout} />}>
+          <Route element={<AdminLayout user={currentUser} onLogout={handleLogout} theme={theme} onToggleTheme={toggleTheme} />}>
             <Route path="/admin/orders" element={<AdminOrders user={currentUser} />} />
             <Route path="/admin/books" element={<AdminProducts />} />
             <Route path="/admin/dashboard" element={<Dashboard />} />
@@ -61,7 +63,7 @@ function App() {
         ) : (
           <Route element={
             <>
-              <NavbarComponent user={currentUser} onLogout={handleLogout} cartCount={cartCount} />
+              <NavbarComponent user={currentUser} onLogout={handleLogout} cartCount={cartCount} theme={theme} onToggleTheme={toggleTheme} />
               <div style={{ paddingTop: '80px' }}>
                 <Outlet />
               </div>
